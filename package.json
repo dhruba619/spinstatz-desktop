@@ -1,0 +1,22 @@
+{
+  "name": "Spinstatz",
+  "description": "An example app, built with Electron.",
+  "license": "MIT",
+  "authors": {
+    "name": "Dhrubajyoti Bhattacharjee",
+    "email": "dhruba619@gmail.com"
+  },
+  "version": "1.0.1",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . Spinstatz --platform=win32 --arch=x64 --out dist/ --version=1.6.4",
+    "setup": "node setup.js"
+  },
+  "devDependencies": {
+    "electron-packager": "^8.6.0",
+    "electron-prebuild": "^1.4.13",
+    "electron-winstaller": "^2.5.2",
+    "store": "^2.0.12"
+  }
+}

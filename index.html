@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Spinstatz</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel='stylesheet prefetch' href='./resources/semantic.min.css'>
+	<script src="./resources/jquery-3.2.1.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./resources/semantic.min.js"></script>
+    <script src="https://cdn.webrtc-experiment.com/MediaStreamRecorder.js"> </script>
+	<link rel="stylesheet" href="./resources/style.css">
+	<style type="text/css">
+	.error{
+		color: red;
+	}
+	</style>
+</head>
+
+<body>
+	<div class="fullscreen-bg">
+		<video loop muted autoplay class="fullscreen-bg__video">
+			<source src="http://spinstatz.com/wp-content/uploads/2017/05/Crowd.mp4" type="video/mp4">
+		</video>
+	</div>
+	<div class="ui middle aligned center aligned grid" id="login_grid">
+		<div class="column">
+			<h2 class="ui image header">
+			<div class="content">
+				<img src="SpinstatzLogo.png"  height="50" width="120"/>
+			</div>
+			</h2>
+			<form class="ui large form">
+				<div class="ui stacked secondary  segment">
+					<div class="field">
+						<div class="ui left icon input">
+							<i class="user icon"></i>
+							<input id="login_username" type="text" name="username" placeholder="Username" no-validate>
+						</div>
+						<br/>
+						<span class="error" id="login_username_error"></span>
+					</div>
+					<div class="field">
+						<div class="ui left icon input">
+							<i class="lock icon"></i>
+							<input id="login_password" type="password" name="password" placeholder="Password" no-validate>
+						</div>
+						<br/>
+						<span class="erroe" id="login_password_error"></span>
+					</div>
+					<div class="field">
+						<div class="ui left icon input">
+							<input class="ui fluid large teal submit button" type="button" name="submit" value="CONNECT" id="login_button" onClick="handleLogin()">
+						</div>
+					</div>
+					<!--<div class="ui fluid large teal submit button">Login</div>-->
+				</div>
+				<div class="ui error message"></div>
+			</form>
+		</div>
+	</div>
+	<div class="ui middle aligned center aligned grid" id="record_grid" style="display:none">
+		<div class="ui active dimmer">
+			<div class="ui massive text loader">Recording...</div>
+		</div>
+	</div>
+	<div class="ui middle aligned center aligned grid" id="connecting_grid" style="display:none">
+		<div class="ui active dimmer">
+			<div class="ui massive text loader">Connecting...</div>
+		</div>
+	</div>
+</body>
+</html>
